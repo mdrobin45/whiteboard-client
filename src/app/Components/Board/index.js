@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const Board = () => {
    const canvasRef = useRef(null);
-   const [isDrawing, setIsDrawing] = useState(null);
+   const isDrawing = useRef(null);
 
    useEffect(() => {
       if (!canvasRef.current) {
@@ -22,14 +22,14 @@ const Board = () => {
 
       // Start drawing function
       const startDrawing = (e) => {
-         setIsDrawing(true);
+         isDrawing.current = true;
          context.beginPath();
          context.moveTo(e.clientX, e.clientY);
       };
 
       // Drawing function
       const draw = (e) => {
-         if (!isDrawing) {
+         if (!isDrawing.current) {
             return;
          }
 
@@ -39,7 +39,7 @@ const Board = () => {
 
       // End drawing function
       const endDrawing = (e) => {
-         setIsDrawing(false);
+         isDrawing.current = false;
       };
 
       // Event listener for drawing
