@@ -1,0 +1,6 @@
+.iconsWrapper {
+   @apply border rounded-md py-2 bg-white flex items-center justify-center gap-2;
+}
+.icon {
+   @apply cursor-pointer p-2 text-gray-700 transition-all text-2xl rounded-md hover:bg-sky-100;
+}
