@@ -1,11 +1,14 @@
 import Board from "./Components/Board";
-import Menubar from "./Components/Menubar";
+import Toolbar from "./Components/Toolbar";
+import styles from "./styles.module.css";
 
 export default function Home() {
    return (
       <main className="h-screen">
          <Board />
-         <Menubar />
+         <div className={styles.toolbarWrapper}>
+            <Toolbar />
+         </div>
       </main>
    );
 }
